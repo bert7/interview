@@ -106,38 +106,26 @@ describe('Endpoint v0', function(){
       .expect({
                 Programmer: [
                 {
-                _id: "54d98a434a80546061331a65",
                 firstname: "Donatelo",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "abcd",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a67",
                 firstname: "Mario",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "123",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a68",
                 firstname: "Koopa",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "1234",
-                __v: 0
                 }
                 ],
                 Marines: [
                 {
-                _id: "54d98a434a80546061331a66",
                 firstname: "Freeman",
                 city: "San Diego",
                 profession: "Marines",
-                password: "abc",
-                __v: 0
                 }
                 ]
                 })
@@ -150,38 +138,26 @@ describe('Endpoint v0', function(){
       .expect({
                 Programmer: [
                 {
-                _id: "54d98a434a80546061331a65",
                 firstname: "Donatelo",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "abcd",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a67",
                 firstname: "Mario",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "123",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a68",
                 firstname: "Koopa",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "1234",
-                __v: 0
                 }
                 ],
                 Marines: [
                 {
-                _id: "54d98a434a80546061331a66",
                 firstname: "Freeman",
                 city: "San Diego",
                 profession: "Marines",
-                password: "abc",
-                __v: 0
                 }
                 ]
                 })
@@ -202,38 +178,26 @@ describe('Endpoint v1', function(){
       .expect({
                 Programmer: [
                 {
-                _id: "54d98a434a80546061331a65",
                 firstname: "Donatelo",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "abcd",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a67",
                 firstname: "Mario",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "123",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a68",
                 firstname: "Koopa",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "1234",
-                __v: 0
                 }
                 ],
                 Marines: [
                 {
-                _id: "54d98a434a80546061331a66",
                 firstname: "Freeman",
                 city: "San Diego",
                 profession: "Marines",
-                password: "abc",
-                __v: 0
                 }
                 ]
               })
@@ -246,30 +210,21 @@ describe('Endpoint v1', function(){
       .expect({
                 Programmer: [
                 {
-                _id: "54d98a434a80546061331a65",
                 firstname: "Donatelo",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "abcd",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a67",
                 firstname: "Mario",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "123",
-                __v: 0
                 }
                 ],
                 Marines: [
                 {
-                _id: "54d98a434a80546061331a66",
                 firstname: "Freeman",
                 city: "San Diego",
                 profession: "Marines",
-                password: "abc",
-                __v: 0
                 }
                 ]
               })
@@ -282,20 +237,14 @@ describe('Endpoint v1', function(){
       .expect({
                 Programmer: [
                 {
-                _id: "54d98a434a80546061331a67",
                 firstname: "Mario",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "123",
-                __v: 0
                 },
                 {
-                _id: "54d98a434a80546061331a68",
                 firstname: "Koopa",
                 city: "San Diego",
                 profession: "Programmer",
-                password: "1234",
-                __v: 0
                 }
                 ]
               })

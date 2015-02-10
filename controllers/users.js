@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
     res.send(result);
   }
 
-  var query = User.find();
+  var query = User.find({}, {_id:0, firstname:1, city:1, profession:1});
 
   if (req.query.city) {
     query = query.where('city').equals(req.query.city);
