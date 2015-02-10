@@ -1,7 +1,7 @@
 var request = require('supertest');
 var should = require('should');
 var express = require('express');
-
+var path = require('path');
 
 var app = request("http://localhost:3000");
 
@@ -67,34 +67,34 @@ describe('Endpoint v0', function(){
       .end(done);
     });
 
-    it('should found readme.txt only', function(done) {
+    it('should find readme.txt only', function(done) {
       app
       .get('/v0/folder')
-      .expect(["downloads\\readme.txt"])
+      .expect([path.join("downloads","readme.txt")])
       .end(done);
     });
 
     it('should found files and folders', function(done) {
       app
       .get('/v0/folder?showfolders=true')
-      .expect([ "downloads\\Doc",
-                "downloads\\Images",
-                "downloads\\readme.txt"])
+      .expect([ path.join("downloads","Doc"),
+                path.join("downloads","Images"),
+                path.join("downloads","readme.txt")])
       .end(done);
     });
 
     it('should found files in subfolder', function(done) {
       app
       .get('/v0/folder?showfolders=false&target=images')
-      .expect([ "downloads\\images\\image.jpg"])
+      .expect([ path.join("downloads","images","image.jpg")])
       .end(done);
     });
 
     it('should found files and folders in subfolder', function(done) {
       app
       .get('/v0/folder?showfolders=true&target=images')
-      .expect([ "downloads\\images\\empty_subfolder",
-                "downloads\\images\\image.jpg"])
+      .expect([ path.join("downloads","images","empty_subfolder"),
+                path.join("downloads","images","image.jpg")])
       .end(done);
     });
   });
