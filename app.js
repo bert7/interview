@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var models = require('./models');
+var fixtures = require('./models/fixtures');
+
+var home = require('./controllers/home');
 
 var app = express();
 
@@ -22,8 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+// Versioning handler
+var versions = {'Version 0': '/v0', 'Version 1': '/v1'};
+for (var ct in versions) {
+    app.use(versions[ct], require('./routes' + versions[ct]));
+}
+
+app.use('/', home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,5 +64,23 @@ app.use(function(err, req, res, next) {
     });
 });
 
+mongoose.connection.on("open", function(ref) {
+  console.log("Connected to mongo server.");
+});
+
+mongoose.connection.on("error", function(err) {
+  console.log("Could not connect to mongo server!");
+  console.log(err);
+  // TODO: Load an error page for the user
+});
+
+var options = {
+  db: { native_parser: true },
+  server: { poolSize: 1,  socketOptions: { keepAlive: 1 }},
+  replset: { rs_name: 'myReplicaSetName' },
+  user: '',
+  pass: ''
+}
 
 module.exports = app;
+mongoose.connect('mongodb://localhost/interviewDB', options);

@@ -2,4 +2,51 @@ extends layout
 
 block content
   h1= title
-  p A project for an #{title}
+  p A project for an #{title} - by Bertrand Barraud on Feb 2015
+
+   #endpoints
+    b Endpoints
+    br
+    br
+    a(href='/v0/status') Component status endpoint
+    br
+    | (No specific paremeters for this endpoint).
+    br
+    br
+    a(href='/v0/users') Users endpoint
+    br
+    | ( Use "city" as Get param to get all user from a specific city, use "group" to group users with a attribute of your choice. )
+    br
+    br
+    | Example : /users?city=Los%20Angeles&group=profession
+    br
+    br
+    a(href='/v1/users?skip=0&limit=5') Users V1 endpoint
+    br
+    | Hey ! Forget about our old User endpoint and try or new V1 !
+    | We added pagination there for you !
+    br
+    | ( Use skip and limit as getter params )
+    br
+    br
+    a(href='/v0/folder?showfolders=false&target=.') Folder endpoint
+    br
+    |( This endpoint give you the possibility to see what files Downloads folder does contain.
+    br
+    |  Use showfolders=true if you want to include folders in the list and not only files.
+    br
+    |  Use target as getter parameter to navigate and see what files sub folders contains. )
+    br
+    br
+    | Example /folder?showFolders=true&target=Doc
+    br
+    br
+  #pages
+    b Pages
+    br
+    br
+    a(href='/v0/auth/login') Auth login Page
+    br
+    | A quick authentication interface using our Auth endpoint.
+    br
+    | You can use it to try to authenticate a user against our database.

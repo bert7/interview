@@ -1,0 +1,16 @@
+form(action='/auth', method='POST', enctype='application/json')
+      | First name:
+      input(type='text', name='username', value='Mickey')
+      br
+      | Password:
+      input(type='text', name='password', value='777')
+      br
+      input(type='submit', value='Submit')
+      p
+      | Click the submit button to test Auth endpoint. Notice no session will be saved during this operation.
+      br
+      br
+      p
+      | Additional testing information :
+      br
+      | The user "Luke" with password "123" should exist in base.
